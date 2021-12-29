@@ -1,8 +1,11 @@
-import { Body, Controller, Get, Param, Post, Put } from '@nestjs/common';
+import { Body, Controller, Delete, Get, Param, Post, Put } from '@nestjs/common';
 import { Product } from '../entity/product.entity';
 import { ProductService } from '../service/product.service';
 import { ProductDto } from '../dto/product.dto';
+import { DeleteResult } from 'typeorm';
+import { ApiTags } from '@nestjs/swagger';
 
+@ApiTags("Products")
 @Controller('product')
 export class ProductController {
     constructor(private productService: ProductService) {
@@ -25,5 +28,12 @@ export class ProductController {
     }
 
     @Put()
-    update(@Body() product: Product): Promise<Product>
+    update(@Body() product: Product): Promise<Product> {
+        return this.productService.update(product);
+    }
+
+    @Delete(':uuid') 
+    delete(@Param('uuid') uuid: string): Promise<DeleteResult> {
+        return this.productService.remove(uuid)
+    }
 }
