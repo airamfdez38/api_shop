@@ -15,10 +15,10 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.UserController = void 0;
 const openapi = require("@nestjs/swagger");
 const common_1 = require("@nestjs/common");
+const user_entity_1 = require("../entity/user.entity");
+const user_service_1 = require("../service/user.service");
+const user_dto_1 = require("../dto/user.dto");
 const swagger_1 = require("@nestjs/swagger");
-const user_service_1 = require("./user.service");
-const user_entity_1 = require("./user.entity");
-const user_dto_1 = require("./dto/user.dto");
 let UserController = class UserController {
     constructor(userService) {
         this.userService = userService;
@@ -41,14 +41,14 @@ let UserController = class UserController {
 };
 __decorate([
     (0, common_1.Get)(),
-    openapi.ApiResponse({ status: 200, type: [require("./user.entity").User] }),
+    openapi.ApiResponse({ status: 200, type: [require("../entity/user.entity").User] }),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", []),
     __metadata("design:returntype", Promise)
 ], UserController.prototype, "findAll", null);
 __decorate([
     (0, common_1.Get)(':uuid'),
-    openapi.ApiResponse({ status: 200, type: require("./user.entity").User }),
+    openapi.ApiResponse({ status: 200, type: require("../entity/user.entity").User }),
     __param(0, (0, common_1.Param)('uuid')),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [String]),
@@ -56,7 +56,7 @@ __decorate([
 ], UserController.prototype, "findById", null);
 __decorate([
     (0, common_1.Post)(),
-    openapi.ApiResponse({ status: 201, type: require("./user.entity").User }),
+    openapi.ApiResponse({ status: 201, type: require("../entity/user.entity").User }),
     __param(0, (0, common_1.Body)()),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [user_dto_1.UserDto]),
@@ -64,14 +64,14 @@ __decorate([
 ], UserController.prototype, "create", null);
 __decorate([
     (0, common_1.Put)(),
-    openapi.ApiResponse({ status: 200, type: require("./user.entity").User }),
+    openapi.ApiResponse({ status: 200, type: require("../entity/user.entity").User }),
     __param(0, (0, common_1.Body)()),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [user_entity_1.User]),
     __metadata("design:returntype", Promise)
 ], UserController.prototype, "update", null);
 __decorate([
-    (0, common_1.Delete)('uuid'),
+    (0, common_1.Delete)(':uuid'),
     openapi.ApiResponse({ status: 200 }),
     __param(0, (0, common_1.Param)('uuid')),
     __metadata("design:type", Function),

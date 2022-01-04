@@ -1,6 +1,6 @@
 import { DeleteResult, Repository } from 'typeorm';
-import { UserDto } from './dto/user.dto';
-import { User } from './user.entity';
+import { UserDto } from '../dto/user.dto';
+import { User } from '../entity/user.entity';
 export declare class UserService {
     private userRepository;
     constructor(userRepository: Repository<User>);

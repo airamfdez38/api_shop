@@ -1,9 +1,9 @@
 import { Body, Controller, Delete, Get, Param, Post, Put } from '@nestjs/common';
+import { User } from '../entity/user.entity';
+import { UserService } from '../service/user.service';
+import { UserDto } from '../dto/user.dto';
 import { ApiTags } from '@nestjs/swagger';
 import { DeleteResult } from 'typeorm';
-import { UserService } from './user.service';
-import { User } from './user.entity';
-import {UserDto} from './dto/user.dto';
 
 
 @ApiTags("Users")
@@ -29,7 +29,7 @@ export class UserController {
     update(@Body() user: User): Promise<User>{
         return this.userService.update(user);
     }
-    @Delete('uuid')
+    @Delete(':uuid')
     delete(@Param('uuid') uuid: string): Promise<DeleteResult>{
         return this.userService.remove(uuid)
     }

@@ -1,7 +1,7 @@
+import { User } from '../entity/user.entity';
+import { UserService } from '../service/user.service';
+import { UserDto } from '../dto/user.dto';
 import { DeleteResult } from 'typeorm';
-import { UserService } from './user.service';
-import { User } from './user.entity';
-import { UserDto } from './dto/user.dto';
 export declare class UserController {
     private userService;
     constructor(userService: UserService);
