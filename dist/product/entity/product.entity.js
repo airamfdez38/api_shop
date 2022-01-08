@@ -42,7 +42,7 @@ __decorate([
     __metadata("design:type", Number)
 ], Product.prototype, "stock", void 0);
 __decorate([
-    (0, typeorm_1.Column)(),
+    (0, typeorm_1.Column)({ type: 'longtext' }),
     __metadata("design:type", String)
 ], Product.prototype, "img_featured", void 0);
 __decorate([

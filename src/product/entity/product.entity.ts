@@ -14,7 +14,8 @@ export class Product{
     price: number;
     @Column()
     stock: number;
-    @Column()
+    
+    @Column({type: 'longtext'})
     img_featured: string;
     @Column({default: true})
     isActive: boolean;
