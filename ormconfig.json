@@ -1,9 +1,9 @@
 {
     "type": "mysql",
-    "host": "localhost",
+    "host": "https://apiqr.happycoding.es",
     "port": 3306,
-    "username": "root",
-    "password": "maria.",
+    "username": "maria_api_shop",
+    "password": "Maria789551789551.",
     "database": "api_shop",
     "entities":["dist/**/*.entity{.ts,.js}"],
     "synchronize": true
