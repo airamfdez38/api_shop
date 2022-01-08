@@ -2,7 +2,7 @@
     "type": "mysql",
     "host": "https://apiqr.happycoding.es",
     "port": 3306,
-    "username": "root",
+    "username": "maria_api_shop",
     "password": "",
     "database": "api_shop",
     "entities":["dist/**/*.entity{.ts,.js}"],
