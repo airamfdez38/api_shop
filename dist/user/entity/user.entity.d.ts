@@ -6,5 +6,5 @@ export declare class User {
     phone: string;
     dni: string;
     isActive: boolean;
-    created_at: string;
+    created_at?: string;
 }

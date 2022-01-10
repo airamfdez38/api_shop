@@ -17,5 +17,5 @@ export class User {
     @Column({ default: true })
     isActive: boolean;
     @CreateDateColumn()
-    created_at: string;
+    created_at?: string;
 }
