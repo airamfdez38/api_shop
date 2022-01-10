@@ -1,9 +1,9 @@
 import { Column, CreateDateColumn, Entity, PrimaryGeneratedColumn } from "typeorm";
 
 @Entity()
-export class Product{
-    @PrimaryGeneratedColumn("uuid")
-    uuid: string;
+export class Product {
+    @PrimaryGeneratedColumn()
+    uuid: number;
     @Column()
     name: string;
     @Column()
@@ -14,11 +14,11 @@ export class Product{
     price: number;
     @Column()
     stock: number;
-    
-    @Column({type: 'longtext'})
+
+    @Column({ type: 'longtext' })
     img_featured: string;
-    @Column({default: true})
+    @Column({ default: true })
     isActive: boolean;
     @CreateDateColumn()
-    created_at: string;
+    created_at?: string;
 }

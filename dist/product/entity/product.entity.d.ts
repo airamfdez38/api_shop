@@ -1,5 +1,5 @@
 export declare class Product {
-    uuid: string;
+    uuid: number;
     name: string;
     description_short: string;
     description_long: string;

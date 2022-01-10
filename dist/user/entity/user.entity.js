@@ -14,13 +14,13 @@ const openapi = require("@nestjs/swagger");
 const typeorm_1 = require("typeorm");
 let User = class User {
     static _OPENAPI_METADATA_FACTORY() {
-        return { uuid: { required: true, type: () => String }, name: { required: true, type: () => String }, surname: { required: true, type: () => String }, email: { required: true, type: () => String }, phone: { required: true, type: () => String }, dni: { required: true, type: () => String }, isActive: { required: true, type: () => Boolean }, created_at: { required: true, type: () => String } };
+        return { id: { required: true, type: () => Number }, name: { required: true, type: () => String }, surname: { required: true, type: () => String }, email: { required: true, type: () => String }, phone: { required: true, type: () => String }, dni: { required: true, type: () => String }, isActive: { required: true, type: () => Boolean }, created_at: { required: true, type: () => String } };
     }
 };
 __decorate([
-    (0, typeorm_1.PrimaryGeneratedColumn)("uuid"),
-    __metadata("design:type", String)
-], User.prototype, "uuid", void 0);
+    (0, typeorm_1.PrimaryGeneratedColumn)(),
+    __metadata("design:type", Number)
+], User.prototype, "id", void 0);
 __decorate([
     (0, typeorm_1.Column)(),
     __metadata("design:type", String)

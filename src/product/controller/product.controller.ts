@@ -9,21 +9,33 @@ import { ApiTags } from '@nestjs/swagger';
 @Controller('product')
 export class ProductController {
     constructor(private productService: ProductService) {
-        
+
     }
 
     @Get()
-    findAll(): Promise<Product[]>{
-        return this.productService.findAll();
+    findAll(): Product[] {
+        const product: Product[] = [
+            {
+                uuid: 1,
+                name: "producto 1",
+                description_short: "descripcion corta",
+                description_long: "descripcion larga",
+                price: 50,
+                stock: 10,
+                img_featured: "",
+                isActive: true
+            }
+        ]
+        return product;
     }
 
     @Get(':uuid')
-    findById(@Param('uuid') uuid:string): Promise<Product>{
+    findById(@Param('uuid') uuid: string): Promise<Product> {
         return this.productService.findOne(uuid);
     }
 
     @Post()
-    create(@Body() dto: ProductDto): Promise<Product>{
+    create(@Body() dto: ProductDto): Promise<Product> {
         return this.productService.create(dto);
     }
 
@@ -32,7 +44,7 @@ export class ProductController {
         return this.productService.update(product);
     }
 
-    @Delete(':uuid') 
+    @Delete(':uuid')
     delete(@Param('uuid') uuid: string): Promise<DeleteResult> {
         return this.productService.remove(uuid)
     }

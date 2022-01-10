@@ -1,9 +1,9 @@
 import { Column, CreateDateColumn, Entity, PrimaryGeneratedColumn } from "typeorm";
 
 @Entity()
-export class User{
-    @PrimaryGeneratedColumn("uuid")
-    uuid: string;
+export class User {
+    @PrimaryGeneratedColumn()
+    id: number;
     @Column()
     name: string;
     @Column()
@@ -14,7 +14,7 @@ export class User{
     phone: string;
     @Column()
     dni: string;
-    @Column({default: true})
+    @Column({ default: true })
     isActive: boolean;
     @CreateDateColumn()
     created_at: string;

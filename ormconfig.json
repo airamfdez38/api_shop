@@ -2,8 +2,8 @@
     "type": "mysql",
     "host": "localhost",
     "port": 3306,
-    "username": "maria_api_shop",
-    "password": "Maria789551789551.",
+    "username": "root",
+    "password": "",
     "database": "api_shop",
     "entities":["dist/**/*.entity{.ts,.js}"],
     "synchronize": true

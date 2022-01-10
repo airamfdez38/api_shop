@@ -7,11 +7,11 @@ import { UserModule } from './user/user.module';
 
 @Module({
   imports: [
-    TypeOrmModule.forRoot(),
+
     ProductModule,
     UserModule
   ],
   controllers: [AppController],
   providers: [AppService],
 })
-export class AppModule {}
+export class AppModule { }
