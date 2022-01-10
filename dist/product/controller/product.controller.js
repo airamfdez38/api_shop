@@ -17,26 +17,38 @@ const openapi = require("@nestjs/swagger");
 const common_1 = require("@nestjs/common");
 const product_entity_1 = require("../entity/product.entity");
 const product_service_1 = require("../service/product.service");
-const product_dto_1 = require("../dto/product.dto");
 const swagger_1 = require("@nestjs/swagger");
 let ProductController = class ProductController {
     constructor(productService) {
         this.productService = productService;
     }
     findAll() {
-        return this.productService.findAll();
+        const product = [
+            {
+                uuid: 1,
+                name: "producto 1",
+                description_short: "descripcion corta",
+                description_long: "descripcion larga",
+                price: 50,
+                stock: 10,
+                img_featured: "",
+                isActive: true
+            }
+        ];
+        return product;
     }
     findById(uuid) {
-        return this.productService.findOne(uuid);
-    }
-    create(dto) {
-        return this.productService.create(dto);
-    }
-    update(product) {
-        return this.productService.update(product);
-    }
-    delete(uuid) {
-        return this.productService.remove(uuid);
+        const product = {
+            uuid: 1,
+            name: "producto 1",
+            description_short: "descripcion corta",
+            description_long: "descripcion larga",
+            price: 50,
+            stock: 10,
+            img_featured: "",
+            isActive: true
+        };
+        return product;
     }
 };
 __decorate([
@@ -44,7 +56,7 @@ __decorate([
     openapi.ApiResponse({ status: 200, type: [require("../entity/product.entity").Product] }),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", []),
-    __metadata("design:returntype", Promise)
+    __metadata("design:returntype", Array)
 ], ProductController.prototype, "findAll", null);
 __decorate([
     (0, common_1.Get)(':uuid'),
@@ -52,32 +64,8 @@ __decorate([
     __param(0, (0, common_1.Param)('uuid')),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [String]),
-    __metadata("design:returntype", Promise)
+    __metadata("design:returntype", product_entity_1.Product)
 ], ProductController.prototype, "findById", null);
-__decorate([
-    (0, common_1.Post)(),
-    openapi.ApiResponse({ status: 201, type: require("../entity/product.entity").Product }),
-    __param(0, (0, common_1.Body)()),
-    __metadata("design:type", Function),
-    __metadata("design:paramtypes", [product_dto_1.ProductDto]),
-    __metadata("design:returntype", Promise)
-], ProductController.prototype, "create", null);
-__decorate([
-    (0, common_1.Put)(),
-    openapi.ApiResponse({ status: 200, type: require("../entity/product.entity").Product }),
-    __param(0, (0, common_1.Body)()),
-    __metadata("design:type", Function),
-    __metadata("design:paramtypes", [product_entity_1.Product]),
-    __metadata("design:returntype", Promise)
-], ProductController.prototype, "update", null);
-__decorate([
-    (0, common_1.Delete)(':uuid'),
-    openapi.ApiResponse({ status: 200 }),
-    __param(0, (0, common_1.Param)('uuid')),
-    __metadata("design:type", Function),
-    __metadata("design:paramtypes", [String]),
-    __metadata("design:returntype", Promise)
-], ProductController.prototype, "delete", null);
 ProductController = __decorate([
     (0, swagger_1.ApiTags)("Products"),
     (0, common_1.Controller)('product'),

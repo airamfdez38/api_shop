@@ -14,7 +14,7 @@ const openapi = require("@nestjs/swagger");
 const typeorm_1 = require("typeorm");
 let Product = class Product {
     static _OPENAPI_METADATA_FACTORY() {
-        return { uuid: { required: true, type: () => Number }, name: { required: true, type: () => String }, description_short: { required: true, type: () => String }, description_long: { required: true, type: () => String }, price: { required: true, type: () => Number }, stock: { required: true, type: () => Number }, img_featured: { required: true, type: () => String }, isActive: { required: true, type: () => Boolean }, created_at: { required: true, type: () => String } };
+        return { uuid: { required: true, type: () => Number }, name: { required: true, type: () => String }, description_short: { required: true, type: () => String }, description_long: { required: true, type: () => String }, price: { required: true, type: () => Number }, stock: { required: true, type: () => Number }, img_featured: { required: true, type: () => String }, isActive: { required: true, type: () => Boolean }, created_at: { required: false, type: () => String } };
     }
 };
 __decorate([

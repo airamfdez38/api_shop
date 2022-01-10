@@ -7,5 +7,5 @@ export declare class Product {
     stock: number;
     img_featured: string;
     isActive: boolean;
-    created_at: string;
+    created_at?: string;
 }

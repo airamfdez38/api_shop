@@ -9,7 +9,7 @@ import { DeleteResult } from 'typeorm';
 @ApiTags("Users")
 @Controller('user')
 export class UserController {
-    constructor(private userService: UserService){
+    /* constructor(private userService: UserService){
 
     }
 
@@ -32,5 +32,5 @@ export class UserController {
     @Delete(':uuid')
     delete(@Param('uuid') uuid: string): Promise<DeleteResult>{
         return this.userService.remove(uuid)
-    }
+    } */
 }

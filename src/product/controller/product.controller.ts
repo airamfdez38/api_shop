@@ -30,11 +30,23 @@ export class ProductController {
     }
 
     @Get(':uuid')
-    findById(@Param('uuid') uuid: string): Promise<Product> {
-        return this.productService.findOne(uuid);
+    findById(@Param('uuid') uuid: string): Product {
+        const product: Product =
+        {
+            uuid: 1,
+            name: "producto 1",
+            description_short: "descripcion corta",
+            description_long: "descripcion larga",
+            price: 50,
+            stock: 10,
+            img_featured: "",
+            isActive: true
+        }
+
+        return product;
     }
 
-    @Post()
+    /* @Post()
     create(@Body() dto: ProductDto): Promise<Product> {
         return this.productService.create(dto);
     }
@@ -47,5 +59,5 @@ export class ProductController {
     @Delete(':uuid')
     delete(@Param('uuid') uuid: string): Promise<DeleteResult> {
         return this.productService.remove(uuid)
-    }
+    } */
 }
